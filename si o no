@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Me gusta</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 50px;
+  }
+</style>
+</head>
+<body>
+  <h2>¿Te gusta esto?</h2>
+  <button onclick="meGusta()">¡Sí, me gusta!</button>
+
+  <script>
+    function meGusta() {
+      alert('¡Me gusta!');
+    }
+    // Evitar que se pueda hacer clic en "No"
+    document.addEventListener('DOMContentLoaded', function() {
+      const noButton = document.querySelector('button');
+      noButton.addEventListener('contextmenu', function(event) {
+        event.preventDefault();
+        alert('No puedes decir "nooo"');
+      });
+    });
+  </script>
+</body>
+</html>
